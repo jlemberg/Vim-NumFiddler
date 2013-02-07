@@ -7,11 +7,11 @@ if exists('g:NumFiddler_loaded')
 	finish
 endif
 
-let g:EasyMotion_loaded = 11
+let g:EasyMotion_loaded = 1
 
 function! NumFiddler(offset)
-    let cword=expand("<cword>")
-    if empty(matchstr(cword, '^\d\+$'))
+    let cword=expand("<cWORD>")
+    if empty(matchstr(cword, '^-\?\d\+$'))
         echo "'" . cword . "' is not a number, sillypants"
     else
         let nword=cword+a:offset
@@ -23,3 +23,4 @@ endfunction
 
 map <silent> <C-Up> :call NumFiddler(1)<CR>
 map <silent> <C-Down> :call NumFiddler(-1)<CR>
+
