@@ -7,7 +7,7 @@ if exists('g:NumFiddler_loaded')
 	finish
 endif
 
-let g:EasyMotion_loaded = 1
+let g:EasyMotion_loaded = 11
 
 function! NumFiddler(offset)
     let cword=expand("<cword>")
@@ -21,5 +21,5 @@ function! NumFiddler(offset)
     endif
 endfunction
 
-map <C-Up> :call NumFiddler(1)<CR>
-map <C-Down> :call NumFiddler(-1)<CR>
+map <silent> <C-Up> :call NumFiddler(1)<CR>
+map <silent> <C-Down> :call NumFiddler(-1)<CR>
