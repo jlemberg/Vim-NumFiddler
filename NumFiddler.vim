@@ -7,7 +7,7 @@ if exists('g:NumFiddler_loaded')
 	finish
 endif
 
-let g:EasyMotion_loaded = 1
+let g:NumFiddler_loaded = 1
 
 function! NumFiddler(offset)
     let cword=expand("<cWORD>")
