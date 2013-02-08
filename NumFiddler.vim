@@ -20,8 +20,8 @@ function! NumFiddler(offset)
     " Check if it's a number
     if !empty(matchstr(cword, '^-\?\d\+\.\?\(\d\+\)\?$'))
         " Check if the cursor's at the beginning of the word
-        if(!empty(matchstr(getline('.')[col('.')-2], '\w')))
-            exe "normal b"
+        if(!empty(matchstr(getline('.')[col('.')-2], '[0-9\.-]')))
+            exe "normal B"
         endif
         let curpos=col('.')
         let startpos=curpos-1
