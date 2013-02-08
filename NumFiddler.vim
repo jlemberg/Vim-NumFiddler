@@ -1,7 +1,7 @@
 " NumFiddler - as inspired by Sublime Text 
 "
 " Author: Jannik Lemberg <j.lemberg@nullwerk.de>
-" Source repository: https://github.com/jlemberg/NumFiddler
+" Source repository: https://github.com/jlemberg/Vim-NumFiddler
 
 " Basic script init
 if exists('g:NumFiddler_loaded')
