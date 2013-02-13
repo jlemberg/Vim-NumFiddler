@@ -18,7 +18,7 @@ function! NumFiddler(offset)
     " Get the current word
     let cword=expand("<cWORD>")
     " Check if it's a number
-    if !empty(matchstr(cword, '^-\?\d\+\.\?\(\d\+\)\?$'))
+    if !empty(matchstr(cword, '^-\?\d\+\.\?\(\d\+\)\?[fF]\?$'))
         " Check if the cursor's at the beginning of the word
         if(!empty(matchstr(getline('.')[col('.')-2], '[0-9\.-]')))
             exe "normal B"
@@ -27,7 +27,7 @@ function! NumFiddler(offset)
         let startpos=curpos-1
         " Inc/Dec number and replace
         let endpos=curpos+strlen(cword)+1 
-
+        let postfix=matchstr(cword, '[fF]')
         let cmd=':s/\%%>%dc%s\%%<%dc/'
         " Determine if either the current word or the offset is a float
         if !empty(matchstr(cword, '\.')) || type(a:offset) == 5 
@@ -37,7 +37,7 @@ function! NumFiddler(offset)
             let cmd.='%d'
             let nword=cword+a:offset
         endif
-        let cmd.='/'
+        let cmd.=postfix.'/'
         
         execute printf(cmd, startpos, cword, endpos, nword)
 
