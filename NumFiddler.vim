@@ -10,7 +10,7 @@ if exists('g:NumFiddler_loaded')
 	finish
 endif
 
-let g:NumFiddler_loaded = 185.2
+let g:NumFiddler_loaded = 1
 
 
 
